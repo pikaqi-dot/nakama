@@ -34,7 +34,7 @@ WORKDIR /go/build/nakama
 RUN git checkout --quiet "$commit" && \
     go build -o /go/build-out/nakama -trimpath -mod=vendor -gcflags "-trimpath $PWD" -asmflags "-trimpath $PWD" -ldflags "-s -w -X main.version=$version -X main.commitID=$commit"
 
-FROM debian:bookworm-slim
+FROM debian:12.6-slim
 
 MAINTAINER Heroic Labs <support@heroiclabs.com>
 
